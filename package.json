@@ -1,0 +1,64 @@
+{
+  "name": "huicanzhan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "make": "electron-forge make",
+    "package": "electron-forge package"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.1",
+    "@electron-forge/maker-deb": "^7.3.1",
+    "@electron-forge/maker-rpm": "^7.3.1",
+    "@electron-forge/maker-squirrel": "^7.3.1",
+    "@electron-forge/maker-zip": "^7.3.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.3.1",
+    "electron": "^29.1.5"
+  },
+  "dependencies": {
+    "@electron-forge/plugin-fuses": "^7.3.1",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "appVersion": "1.0.0",
+        "name": "惠注册",
+        "appCopyright": "gxy(gxy17319132740@163.com)",
+        "icon": "./assets/img/appIcon/appicon",
+        "win32metadata": {
+          "ProductName": "惠注册 Windows",
+          "CompanyName": "gxy.cn",
+          "FileDescription": "惠注册 by gxy"
+        }
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_demo"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
